@@ -4,12 +4,11 @@ import styles from "./Login.module.css";
 import { Form, Field } from 'react-final-form'
 import { user } from "../features/user/userApi";
 
-// import {getUser} from "../features/users/usersSlice"
-
 type Values = {
     login:string,
     password:string
 }
+
 export function MyForm (){
     const dispatch = useAppDispatch();
 

@@ -33,7 +33,6 @@ export const userSlice = createSlice({
 // export const { getUser} =
 //   cardsSlice.actions;
 
-// export const selectCards = (state: RootState) => state.cards.products;
-// export const selectShowLiked = (state: RootState) => state.cards.showLiked;
+export const selectUser = (state: RootState) => state.user.user;
 
 export default userSlice.reducer;
