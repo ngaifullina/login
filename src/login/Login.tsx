@@ -2,16 +2,18 @@ import React, {useEffect} from "react";
 import { useAppSelector, useAppDispatch } from "../app/hooks";
 import styles from "./Login.module.css";
 import { Form, Field } from 'react-final-form'
+import { user } from "../features/user/userApi";
+
+// import {getUser} from "../features/users/usersSlice"
 
 type Values = {
     login:string,
     password:string
 }
 export function MyForm (){
-    const onSubmit = (values:Values) => {
-     console.log(values.login )
-        
-      };
+    const dispatch = useAppDispatch();
+
+    const onSubmit = (values:Values) => {dispatch(user())};
       return (
         <Form
             onSubmit={onSubmit}
