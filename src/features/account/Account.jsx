@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
-import {selectUser} from "../../features/user/userSlice"
+import {selectUser} from "../user/userSlice"
 import styles from "./Account.module.css";
  
 export function Account(){
