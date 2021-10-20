@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 import { user } from "./userApi";
 export type User = {
@@ -56,8 +56,6 @@ export const userSlice = createSlice({
     });
   },
 });
-// export const { getUser} =
-//   cardsSlice.actions;
 
 export const selectUser = (state: RootState) => state.user.user;
 export const status = (state: RootState) => state.user.status;

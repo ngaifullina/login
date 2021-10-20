@@ -70,13 +70,12 @@ const User = {
 
 type UserType = typeof User;
 export const user = createAsyncThunk("users/user", async () => {
-  console.log("in request");
   const responce = (await (
     await axios.get("https://randomuser.me/api/")
   ).data) as UserType;
   let user = responce.results[0];
   return {
-    photo: user.picture.medium,
+    photo: user.picture.large,
     firstName: user.name.first,
     lastName: user.name.last,
   };
