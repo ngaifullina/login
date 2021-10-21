@@ -18,5 +18,8 @@
 
 .card__name {
   margin: 5px;
-  width: 150px;
+}
+
+.card__img {
+  width: 180px;
 }

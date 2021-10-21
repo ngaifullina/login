@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
-import { user } from "./userApi";
+import { fetchUser } from "./userApi";
+
 export type User = {
   firstName: string;
   lastName: string;
@@ -42,18 +43,19 @@ export const userSlice = createSlice({
   },
 
   extraReducers: (builder) => {
-    builder.addCase(user.fulfilled, (state, { payload }) => {
-      state.status.isFetching = false;
-      state.status.isSuccess = true;
-      state.user = payload;
-    });
-    builder.addCase(user.pending, (state) => {
-      state.status.isFetching = true;
-    });
-    builder.addCase(user.rejected, (state) => {
-      state.status.isFetching = false;
-      state.status.isError = true;
-    });
+    builder
+      .addCase(fetchUser.fulfilled, (state, { payload }) => {
+        state.status.isFetching = false;
+        state.status.isSuccess = true;
+        state.user = payload;
+      })
+      .addCase(fetchUser.pending, (state) => {
+        state.status.isFetching = true;
+      })
+      .addCase(fetchUser.rejected, (state) => {
+        state.status.isFetching = false;
+        state.status.isError = true;
+      });
   },
 });
 
