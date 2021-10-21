@@ -1,3 +1,4 @@
+import React from "react";
 import { useAppSelector } from "../../app/hooks";
 import { selectUser } from "../user/userSlice";
 import styles from "./Account.module.css";
