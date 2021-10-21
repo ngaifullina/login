@@ -33,7 +33,7 @@ export function MyForm() {
   });
 
   const onSubmit = () => dispatch(fetchUser());
-
+  const required = (value: string) => (value ? undefined : "Required");
   return (
     <Styles>
       <div>
@@ -42,13 +42,19 @@ export function MyForm() {
           render={({ handleSubmit }) => (
             <form onSubmit={handleSubmit}>
               <div>
-                <Field name="login" component="input" placeholder="login" />
+                <Field
+                  name="login"
+                  component="input"
+                  placeholder="login"
+                  validate={required}
+                />
               </div>
               <div>
                 <Field
                   name="password"
                   placeholder="password"
                   component="input"
+                  validate={required}
                 />
               </div>
 
